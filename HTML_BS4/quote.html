@@ -147,239 +147,151 @@
 						</header>
 
 					</div>
-			</section>
-			<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-			<script>
-				function func() {
-					var Buildingtype = document.getElementByName("buildingtype");
-					var Residential = document.getElementById("residential");
-					var Commercial= document.getElementById("commercial");
-					var Corporatae= document.getElementById("corporate");
-					var Hybrid = document.getElementById("hybrid");
-					if(Buildingtype[0].checked)
-					{
-						Residential.classList.remove("hide");
-						Commericial.classList.add("hide");
-						Corporate.classList.add("hide");
-						Hybrid.classList.add("hide");
-					}
-					else if(Buildingtype[1].checked)
-					{
-						Residential.classList.add("hide");
-						Commericial.classList.remove("hide");
-						Corporate.classList.add("hide");
-						Hybrid.classList.add("hide");
-					}
-					else if(Buildingtype[2].checked)
-					{
-						Residential.classList.add("hide");
-						Commericial.classList.add("hide");
-						Corporate.classList.remove("hide");
-						Hybrid.classList.add("hide");
-					}
-					else if(Buildingtype[3].checked)
-					{
-						Residential.classList.add("hide");
-						Commericial.classList.add("hide");
-						Corporate.classList.add("hide");
-						Hybrid.classList.remove("hide");
-					}
-				}
-
-				</script>				
-		<section class="container">
-			<div class="container">
-				<form id="quoteForm" action="quote.html" method="post">
-										<div>
-											<h2 class="fs-17">PRODUCT LINES:</h2>
-											<ul class="booking-option-list">
-													<li>
+			</section>					
+			
+			<section class="section-sm alternate" style="width: auto">
+					<div class="heading-title heading-dotted text-center">		
+						<ul id="building-type">
+						<label class="fs-17" for="">BUILDING TYPES</label>
+						<select id = "buildingtype">
+							<option id="residential" type="residential" value="residential"> Residential </option>
+							<option id="commercial" type="commerical" value="commercial"> Commercial </option>
+							<option id="corporate" type="corporate" value="corporate"> Corporate </option>
+							<option id="hybrid" type="hybrid" value="hybrid"> Hybrid </option>
+						</select>
+						</ul>
+					</div>
+		
+					<div id="productLine" class="row">
+											<div><h2 class="fs-17">PRODUCT LINES:</h2></div><br>
+												<div class="col-sm-3">
 													<label class="radio block">
-													<input type="radio" name="productLine"  value="standard"> 
-													<i></i>
-													<h3> Standard Unit Cost: $7565 + 10% Installation Fee</h3>
+													<input id="standard" type="radio" name="productLine"  value="standard"> 
+													<i></i> Standard
 													</label>
-													</li>
-													<li>
-													<label class="radio block">
-													<input type="radio" name="productLine"  value="premium"> 
-													<i></i>
-													<h3>  Premium Unit Cost: $12,345 + 13% Installation Fee</h3>
-													</label>
-													</li>
-													<li>
-													<label class="radio block">
-													<input type="radio"  name="productLine"  value="excelium" checked="checked"> 
-													<i></i>
-													<h3> Excelium Unit Cost: $15,400 + 16% Installation Fee</h3>
-													</label>
-													</li>
-											</ul>	
-										</div>				
-										<div class="buildingOption">
-											<h2 class="fs-17">BUILDING TYPE:</h2>
-											<ul class="booking-option-list">
-												<li>
-													<label class="radio block">
-													<input type="radio" name="buildingtype" value="residential" checked="checked" onclick="func();">
-													<i></i>
-													<h3>Residential</h3>
-													</label>
-												</li>
-												<li>											
-													<label class="radio block">
-													<input  type="radio" name="buildingtype" value="commercial"onclick="func();" >
-													<i></i>
-													<h3>Commercial</h3>
-													</label>
-												</li>
-												<li>
-													<label class="radio block">
-													<input type="radio" name="buildingtype" value="corporate" onclick="func();" >
-													<i></i>
-													<h3>Corporate</h3>
-													</label>	
-												</li>												
-												<li>
-													<label class="radio block">
-													<input  type="radio" name="buildingtype" value="hybrid" onclick="func();">
-													<i></i>
-													<h3>Hybrid</h3>
-													</label>
-												</li>
-											</ul>													
-										</div>
-										<hr>
-										<div id="residential">
-											<h2 class="fs-17">RESIDENTIAL BUILDING DETAIL:</h2>
-											<div class="booking-form-highlight">
-											<div class="row">
-												<div>
-												<label for="res_apts">Number of Apartments:</label>
-												<input type="residential" id="number-of-apartments" name="number-of-apartments"> 
-												
 												</div>
-												<div>
-												<label for="res_floors">Number of Floors:</label>
-												<input type="residential" id="number-of-floors" name="number-of-floors"> 
-												<button onclick="res_floors()"></button>
+												<div class="col-sm-3">	
+													<label class="radio block">
+													<input id="premium" type="radio" name="productLine"  value="premium"> 
+													<i></i>Premium
+													</label>
 												</div>
-												<div>
-												<label for="res_basements">Number of Basements:</label>
-												<input type="residential" id="number-of-basements" name="number-of-basements"> 
-												<button onclick="res_basements()"></button>
+												<div class="col-sm-3">	
+													<label class="radio block">
+													<input id="excelium" type="radio"  name="productLine"  value="excelium" checked="checked"> 
+													<i></i> Excelium
+													</label>
 												</div>			
-											</div>
-											</div>
-										</div id="commercial">
-										<div>	
-											<h2 class="fs-17">COMMERCIAL BUILDING DETAIL</h2>
-											<div  class="booking-form-highlight">	
-											<div class="row">
-												<div>
-												<label for="com_biz">Number of Businesses:</label>
-												<input type="commercial" id="number-of-companies" name="number-of-companies"> 
-												<button onclick="com_biz()"></button>
-												</div>
-												<div>
-												<label for="com_shafts">Number of Floors:</label>
-												<input type="commercial" id="number-of-floors" name="number-of-floors"> 
-												<button onclick="com_floors()"></button>
-												</div>
-												<div>
-												<label for="com_shafts">Number of Basements:</label>
-												<input type="commercial" id="number-of-basements" name="number-of-basements"> 
-												<button onclick="com_basements()"></button>
-												</div>
-												<div>
-												<label for="com_park">Number of Parking:</label>
-												<input type="commercial" id="number-of-parking-spots" name="number-of-parking-spots"> 
-												<button onclick="com_park()"></button>
-												</div>
-												<div>
-												<label for="com_shafts">Number of Elevators:</label>
-												<input type="commercial" id="number-of-elevators" name="number-of-elevators"> 
-												<button onclick="com_cages()"></button>
+												<hr>					
+									<div class="container global_">
+										<form id="quoteForm" action="quote.html" method="post">					
+											<hr>	
+											<h2 class="fs-17">BUILDING DETAILS</h2>
+											<div id="Dresidential">
+												<div class="row">
+													<div id="number-of-apartments" class="col-sm-4">
+														<label for="number-of-apartments">Number of Apartments</label>
+														<input class="form-control pointer" type="number" name="number-of-apartments" min="0">
+													</div>
+													<div id="number-of-floors" class="col-sm-4">
+														<label for="number-of-floors">Number of floors</label>
+														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
+													</div>
+													<div id="number-of-basements" class="col-sm-4">
+														<label for="number-of-basements">Number of basements</label>
+														<input class="form-control pointer" type="number" name="number-of-basements" min="0">
+													</div>
 												</div>
 											</div>
-											</div>	
-										</div>					
-										<div id="corporate">
-											<h2 class="fs-17">CORPORATE BUILDING DETAIL</h2>
-											<div class="booking-form-highlight">
-											<div class="row">
-												<div>
-												<label for="corp_tenants">Number of Corporations:</label>
-												<input type="corporate" id="number-of-corporations" name="number-of-corporations"> 
-												<button onclick="corp_tenants()"></button>
+											<div id="Dcommercial" class="hide">
+												<div class="row">
+													<div  id="num-of-companies" class="col-sm-4">
+														<label for="num-of-companies">Number of companies</label>
+														<input class="form-control pointer" type="number" name="number-of-companies"min="0">
+													</div>
+													<div id="number-of-floors" class="col-sm-4">
+														<label for="number-of-floors">Number of floors</label>
+														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
+													</div>
+													<div id="number-of-basements" class="col-sm-4">
+														<label for="number-of-basements">Number of basements</label>
+														<input class="form-control pointer" type="number" name="number_basements" min="0">
+													</div>
 												</div>
-												<div>
-												<label for="corp_floors">Number of Floors:</label>
-												<input type="corporate" id="number-of-floors" name="number-of-floors"> 
-												<button onclick="corp_floors()"></button>
-												</div>						
-												<div>
-												<label for="corp_basement">Number of basements:</label>
-												<input type="corporate" id="number-of-basements" name="number-of-basements" max ='24'> 
-												<button onclick="corp_basement()"></button>
+												<div class="row">
+													<div class="col-sm-4">
+														<label for="number-of-parking-spots">Number of parking spots</label>
+														<input class="form-control pointer" type="number" name="number-of-parking-spots"
+															id="number-of-parking-spots" min="0">
+													</div>
+													<div id="number-of-elevators" class="col-sm-4">
+														<label for="number-of-elevators">Number of elevators</label>
+														<input class="form-control pointer" type="number" name="number-of-elevators" min="0">
+													</div>
 												</div>
-												<div>
-												<label for="corp_parking">Number of parking:</label>
-												<input type="corporate" id="number-of-parking-spots" name="number-of-parking-spots"> 
-												<button onclick="corp_parking()"></button>
-												</div>		
-												<div>
-												<label for="corp_occupants">Number of occupants:</label>
-												<input type="corporate" id="maximum-occupancy" name="maximum-occupancy" max ='24'> 
-												<button onclick="corp_occupants()"></button>
-												</div>					
 											</div>
-											</div>
-										</div>
-										<div id="hybrid">
-											<h2 class="fs-17">HYBRID BUILDING DETAIL</h2>		
-											<div class="booking-form-highlight">	
-											<div class="row">	
-												<div>
-												<label for="hybr_biz">Number of businesses:</label>
-												<input type="hybrid" id="number-of-companies" name="number-of-companies"> 
-												<button onclick="hybr_biz()"></button>
+											<div id="Dcorporate" class="hide">
+												<div class="row">
+													<div id="number-of-corporations" class="col-sm-4">
+														<label for="number-of-corporations">Number of corporations</label>
+														<input class="form-control pointer" type="number" name="number-of-corporations" min="0">
+													</div>
+													<div id="number-of-floors" class="col-sm-4">
+														<label for="number-of-floors">Number of floors</label>
+														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
+													</div>
+													<div id="number-of-basements" class="col-sm-4">
+														<label for="number-of-basements">Number of basements</label>
+														<input class="form-control pointer" type="number" name="number-of-basements" min="0">
+													</div>
+													<div id="number-of-parking-spots"class="col-sm-4" >
+														<label for="number-of-parking-spots">Number of parking spots</label>
+														<input class="form-control pointer" type="number" name="number-of-parking-spots" min="0">
+													</div>
+													<div id="maximum-occupancy" class="col-sm-4">
+														<label for="maximum-occupancy">Maximum of occupancy</label>
+														<input class="form-control pointer" type="number" name="maximum-occupancy" min="0">
+													</div>
 												</div>
-												<div>
-												<label for="hybr_floors">Number of Floors:</label>
-												<input type="hybrid" id="number-of-floors" name="number-of-floors"> 
-												<button onclick="hybr_floors()"></button>
-												</div>							
-												<div>
-												<label for="hybr_basement">Number of basements:</label>
-												<input type="hybrid" id="number-of-basements" name="number-of-basements" max ='24'> 
-												<button onclick="hybr_occupants()"></button>
-												</div>
-												<div>
-												<label for="hybr_parking">Number of parkings:</label>
-												<input type="hybrid" id="number-of-parking-spots" name="number-of-parking-spots"> 
-												<button onclick="hybr_parking()"></button>
-												</div>
-												<div>
-												<label for="corp_occupants">Number of occupants:</label>
-												<input type="hybrid" id="maximum-occupancy" name="maximum-occupancy" max ='24'> 
-												<button onclick="corp_occupants()"></button>
-												</div>							
-												<div>
-												<label for="hybr_hours">Number of hours of activity</label>
-												<input type="hybrid" id="business-hours" name="business-hours" max ='24'> 
-												<button onclick="hybr_hours()"></button>
-												</div>								
 											</div>
+											<div id="Dhybrid" class="hide">
+												<div class="row">
+													<div id="number-of-floors"  class="col-sm-4">
+														<label for="number-of-floors">Number of floors</label>
+														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
+													</div>
+													<div class="col-sm-4">
+														<label for="number_basements">Number of basements</label>
+														<input class="form-control pointer" type="number" name="number_basements" 
+														id="number-of-basements" min="0">
+													</div>
+													<div id="number-of-companies" class="col-sm-4">
+														<label for="number-of-companies">Number of companies</label>
+														<input class="form-control pointer" type="number" name="number-of-companies" min="0">
+													</div>	
+													<div id="number-of-parking-spots" class="col-sm-4">
+														<label for="number-of-parking-spots">Number of parking spots</label>
+														<input class="form-control pointer" type="number" name="number-of-parking-spots" min="0">
+													</div>
+													<div id="maximum-occupancy" class="col-sm-4">
+														<label for="maximum-occupancy">Maximum occupancy</label>
+														<input class="form-control pointer" type="number" name="maximum-occupancy" min="0">
+													</div>
+													<div id="business-hours" class="col-sm-4">
+														<label for="business-hours">Number of business hours</label>
+														<input class="form-control pointer" type="number" name="business-hours" max="24">
+													</div>
+												</div>
 											</div>
-								
-										</div>
 										<hr>					
-										<div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-										TOTAL REQUIRED ELEVATORS: <span id="total_nighs"></span> <span class="text-muted fs-13 fw-300"></span> UNITS </span>
-										</div>							
-										<div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-										TOTAL COST: $<span id="total_payment"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
+										<div id="elevator-amount" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+										TOTAL REQUIRED ELEVATORS: <span id="elevator-amount"></span> <span class="text-muted fs-13 fw-300"></span> UNITS </span>
+										</div>	
+										<div id="installation-fees" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL INSTALLATION FEES: $<span id="installation-fees"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
+											</div>				
+										<div id="final-price" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+										TOTAL COST: $<span id="final-price"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
 										</div>
 										<hr>
 										<h2 class="fs-17 mt-60">PERSONAL DETAIL</h2>
@@ -504,10 +416,66 @@
 
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
 
-        crossorigin="anonymous"></script>
-
+		crossorigin="anonymous"></script>
+		<script>
+		var BUILD = document.querySelectorAll("#building-type");
+		var RES = document.getElementById("Dresidential");
+		var COM = document.getElementById("Dcommercial");
+		var COR = document.getElementById("Dcorporate");
+		var HYB = document.getElementById("Dhybrid");
+		
+		BUILD.forEach((BUILD) => {
+		  BUILD.addEventListener("click", (e) => {
+			let selectedBUILD = e.target.value;
+			if (selectedBUILD === "residential") {
+			  RES.classList.remove("hide");
+			  COM.classList.add("hide");
+			  COR.classList.add("hide");
+			  HYB.classList.add("hide");
+			} else if (selectedBUILD === "commercial") {
+			  RES.classList.add("hide");
+			  COM.classList.remove("hide");
+			  COR.classList.add("hide");
+			  hybridQuoteForm.classList.add("hide");
+			} else if (selectedBUILD === "corporate") {
+			  RES.classList.add("hide");
+			  COM.classList.add("hide");
+			  COR.classList.remove("hide");
+			  HYB.classList.add("hide");
+			} else {
+			  RES.classList.add("hide");
+			  COM.classList.add("hide");
+			  COR.classList.add("hide");
+			  HYB.classList.remove("hide");
+			}
+		  });
+		}); </script>
+<!--	
+		<script>
+			var Price = [];
+			Price[] 7565
+					12,345
+					15,400
+					10%
+					13%
+					16%
+			commercial		number-of-elevators
+residential	 if	(number-of-floors - number-of-basements) /number-of-apartments > 20 then (number-of-floors - number-of-basements) /number-of-apartments /3 = number-of-elevators
+				elese (number-of-floors) /number-of-apartments > 20 then (number-of-floors - number-of-basements) /number-of-apartments /6 = number-of-elevators
+corporate/hybrid 	(maximum-of-occupancy * (number-of-floors + number-of-basements)) / 1000 = number of elevators  required.
+												/
+					(number-of-stories + number-of-basement)/20 = number of colums required
+												= number-elevator-percolum
+												number-of-elevator = number-elevator-percolum * number of colums required.
+		installation cost = unit cost of selected * number of elevators.
+		
+		
+		
+		
+		
+											</script>
 	
-	
+	-->	
 	
 
 
