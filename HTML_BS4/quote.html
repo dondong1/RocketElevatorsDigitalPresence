@@ -283,19 +283,19 @@
 													</div>
 												</div>
 											</div>
-										<hr>					
-										<div id="elevator-amount" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-										TOTAL REQUIRED ELEVATORS: <span id="elevator-amount"></span> <span class="text-muted fs-13 fw-300"></span> UNITS </span>
-										</div>	
-										<div id="installation-fees" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											<hr>					
+											<div id="elevator-amount" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL REQUIRED ELEVATORS: <span id="elevator-amount"></span> <span class="text-muted fs-13 fw-300"></span> UNITS </span>
+											</div>	
+											<div id="installation-fees" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
 											TOTAL INSTALLATION FEES: $<span id="installation-fees"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
 											</div>				
-										<div id="final-price" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-										TOTAL COST: $<span id="final-price"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
-										</div>
-										<hr>
-										<h2 class="fs-17 mt-60">PERSONAL DETAIL</h2>
-										<div class="booking-form-highlight mb-30">
+											<div id="final-price" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL COST: $<span id="final-price"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
+											</div>
+											<hr>
+											<h2 class="fs-17 mt-60">PERSONAL DETAIL</h2>
+											<div class="booking-form-highlight mb-30">
 											<div class="row">
 												<div class="col-sm-4">
 												<label>Full name</label>
@@ -310,13 +310,13 @@
 												<input required type="text" name="client-phone" class="form-control">
 												</div>
 											</div>
-										</div>
-										<hr>
-										<button type="submit" class="btn btn-primary btn-lg-xs">
-										<i class="fa fa-check"></i>
-										PURCHASE NOW
-										</button>					
-					</form>
+											</div>
+											<hr>
+											<button type="submit" class="btn btn-primary btn-lg-xs">
+											<i class="fa fa-check"></i>
+											CLICK HERE TO GET YOUR QUOTE NOW
+											</button>					
+										</form>
 				</div>
 			
 			</section>
@@ -418,6 +418,8 @@
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
 
 		crossorigin="anonymous"></script>
+
+		
 		<script>
 		var BUILD = document.querySelectorAll("#building-type");
 		var RES = document.getElementById("Dresidential");
@@ -451,8 +453,43 @@
 			}
 		  });
 		}); </script>
+		<script>
+
+		</script>
+		<script>
+			jQuery(document).ready(function()) {
+				_init_();
+			});
+		</script>
+		<script>
+			function_init() {		
+			}
+			function_getBookingData() {
+
+
+
+
+
+			}
+			fuction_computeQuote(){
+				_bookingData = _getBookingData();
+				_final-price 
+				_elevator-amount
+				_number-amount
+				__elevator-unit-percent
+				_elevator-unit-price = 
+			jQuery("#installation-fees").html(_elevator-unit-percent * _final-price)
+			jQuery("#elevator-amount").html(_number-amount);
+			jQuery("#final-price").html(_elevator-unit-price * _elevator-amount);
+		}
+jQuery("form#quoteForm input, form#quoteForm select").on("change", function() {
+			_computeQuote();
+		});
+		_computeQuote();
+		</script>
 <!--	
 		<script>
+			var number-of-elevators = function
 			var Price = [];
 			Price[] 7565
 					12,345
