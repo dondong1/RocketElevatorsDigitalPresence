@@ -139,7 +139,8 @@
 				<!-- /Top Nav -->
 
 				</div>
-			<section class="section-sm alternate">
+<section class="section-sm alternate">
+	
 					<div class="container">
 
 						<header class="text-center">
@@ -150,6 +151,8 @@
 			</section>					
 			
 			<section class="cointainer" style="width: auto">
+				<form id="quoteForm" action="quote.html" method="post"></form>
+
 					<div class="heading-title heading-dotted text-center">		
 						<ul id="building-type">
 						<label class="fs-17" for="">BUILDING TYPES</label>
@@ -163,28 +166,33 @@
 					</div>
 		
 					<div id="productLine" class="row">
-											<div class="text-right col-sm-3"><h4>PRODUCT LINES:</h4></div>
+											<div  class="text-right col-sm-3"><h4>PRODUCT LINES:</h4></div>
+											
 												<div class="col-sm-3">
 													<label class="radio block">
-													<input id="standard" type="radio" name="productLine"  value="standard"> 
-													<i></i> Standard
+													<input data-price="7655" data-fee="1.10" id="standard" type="radio" name="productLine"value="standard"> 
+													<i></i> 
+													<h3> Standard </h3>
 													</label>
 												</div>
-												<div class="col-sm-3">	
+												<div class="col-sm-3">
 													<label class="radio block">
-													<input id="premium" type="radio" name="productLine"  value="premium"> 
-													<i></i>Premium
+													<input data-price="12345" data-fee="1.13" id="premium" type="radio" name="productLine"value="premium"> 
+													<i></i> 
+													<h3>Premium </h3>
 													</label>
 												</div>
-												<div class="col-sm-3">	
+												<div class="col-sm-3">
 													<label class="radio block">
-													<input id="excelium" type="radio"  name="productLine"  value="excelium" checked="checked"> 
-													<i></i> Excelium
+													<input data-price="15400" data-fee="1.16" id="excelium" type="radio"  name="productLine" value="excelium" checked="checked"> 
+													<i></i> 
+													<h3>Excelium </h3>
 													</label>
-												</div>			
+												</div>
+														
 												<hr>					
 									<div class="container global_">
-										<form id="quoteForm" action="quote.html" method="post">					
+															
 											<hr>	
 											<h2 class="fs-17">BUILDING DETAILS</h2>
 											<div id="Dresidential">
@@ -226,7 +234,7 @@
 													</div>
 													<div id="number-of-elevators" class="col-sm-4">
 														<label for="number-of-elevators">Number of elevators</label>
-														<input class="form-control pointer" type="number" name="number-of-elevators" min="0">
+														<input id="number-of-elevators_input" class="form-control pointer" type="number" name="number-of-elevators" min="0">
 													</div>
 												</div>
 											</div>
@@ -284,14 +292,24 @@
 												</div>
 											</div>
 											<hr>					
-											<div id="elevator-amount" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL REQUIRED ELEVATORS: <span id="elevator-amount"></span> <span class="text-muted fs-13 fw-300"></span> UNITS </span>
+											<div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL REQUIRED ELEVATORS:     <span id="elevator-amount">0</span> UNITS </span>
+											</div>
+											<hr>
+											<div  class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											EACH ELEVATOR COST: <span id="elevator-unitcost">0</span> <span class="text-muted fs-13 fw-300"></span> USD</span>
+											</div>
+											<hr>
+											<div  class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL ELEVATORS COST (WITHOUT INSTALLATION): $<span id="elevator-cost">0</span> <span class="text-muted fs-13 fw-300"></span> USD</span>
+											</div>
+											<hr>
+											<div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL INSTALLATION FEES: $<span id="installation-fees">0</span><span class="text-muted fs-13 fw-300"></span> USD </span>
 											</div>	
-											<div id="installation-fees" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL INSTALLATION FEES: $<span id="installation-fees"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
-											</div>				
-											<div id="final-price" class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL COST: $<span id="final-price"></span> <span class="text-muted fs-13 fw-300"></span> USD </span>
+											<hr>			
+											<div  class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
+											TOTAL COST WITH INSTALLATION: $<span id="final-price">0</span> <span class="text-muted fs-13 fw-300"></span> USD </span>
 											</div>
 											<hr>
 											<h2 class="fs-17 mt-60">PERSONAL DETAIL</h2>
@@ -314,11 +332,11 @@
 											<hr>
 											<button type="submit" class="btn btn-primary btn-lg-xs">
 											<i class="fa fa-check"></i>
-											CLICK HERE TO GET YOUR QUOTE NOW
+											PURCHASE NOW
 											</button>					
-										</form>
+										
 				</div>
-			
+			</form>			
 			</section>
 			<!-- FOOTER -->
 			<footer id="footer">
@@ -424,98 +442,112 @@
 		var BUILD = document.querySelectorAll("#building-type");
 		var RES = document.getElementById("Dresidential");
 		var COM = document.getElementById("Dcommercial");
-		var COR = document.getElementById("Dcorporate");
+		var CORT = document.getElementById("Dcorporate");
 		var HYB = document.getElementById("Dhybrid");
-		
+		var selectedBUILD = "";
 		BUILD.forEach((BUILD) => {
 		  BUILD.addEventListener("click", (e) => {
-			let selectedBUILD = e.target.value;
+			 selectedBUILD = e.target.value;
+			_computeBooking(selectedBUILD)
 			if (selectedBUILD === "residential") {
 			  RES.classList.remove("hide");
 			  COM.classList.add("hide");
-			  COR.classList.add("hide");
+			  CORT.classList.add("hide");
 			  HYB.classList.add("hide");
 			} else if (selectedBUILD === "commercial") {
 			  RES.classList.add("hide");
 			  COM.classList.remove("hide");
-			  COR.classList.add("hide");
-			  hybridQuoteForm.classList.add("hide");
+			  CORT.classList.add("hide");
+			  HYB.classList.add("hide");
 			} else if (selectedBUILD === "corporate") {
 			  RES.classList.add("hide");
 			  COM.classList.add("hide");
-			  COR.classList.remove("hide");
+			  CORT.classList.remove("hide");
 			  HYB.classList.add("hide");
 			} else {
 			  RES.classList.add("hide");
 			  COM.classList.add("hide");
-			  COR.classList.add("hide");
-			  HYB.classList.remove("hide");
+			  CORT.classList.add("hide");
+			  HYB.classList.remove("hide");			
 			}
 		  });
-		}); </script>
-		<script>
-
-		</script>
-		<script>
-			jQuery(document).ready(function()) {
-				_init_();
-			});
-		</script>
-		<script>
-			function_init() {		
-			}
-			function_getBookingData() {
-
-
-
-
-
-			}
-			fuction_computeQuote(){
-				_bookingData = _getBookingData();
-				_final-price 
-				_elevator-amount
-				_number-amount
-				__elevator-unit-percent
-				_elevator-unit-price = 
-			jQuery("#installation-fees").html(_elevator-unit-percent * _final-price)
-			jQuery("#elevator-amount").html(_number-amount);
-			jQuery("#final-price").html(_elevator-unit-price * _elevator-amount);
-		}
-jQuery("form#quoteForm input, form#quoteForm select").on("change", function() {
-			_computeQuote();
 		});
-		_computeQuote();
+		var APT = document.getElementById("number-of-appartment_input");
+    	var FLR = document.getElementById("number-of-floors_input");
+   		var BAS = document.getElementById("number-of-basements_input");
+    	var COP = document.getElementById("number-of-companies_input");
+    	var PAR = document.getElementById("number-of-parking-spots_input");
+    	var ELV = document.getElementById("number-of-elevators_input");
+    	var COR = document.getElementById("number-of-corporations_input");
+   	    var OCC = document.getElementById("max-occupancy_input");
+    	var HRS = document.getElementById("number-of-hours_input");
+		var productLineButtons = document.querySelectorAll("input[name=productLine]")
+		var elevatorAmount = document.getElementById("elevator-amount");
+		var apartments = 0;
+		var floors = 0;
+		var basements = 0;
+		var elevators = 0;
+		var occupancy = 0;
+		var recommended = 0;
+		var unitCost = 0;
+		var elevatorUnitCost = document.getElementById("elevator-unitcost")
+		var elevatorCost = document.getElementById("elevator-cost")
+	function _computeBooking(selectedBUILD) {
+		productLineButtons.forEach(function(button){
+			button.addEventListener("click", function(event){
+			unitCost = event.target.getAttribute("data-price")	
+			elevatorUnitCost.textContent = unitCost	
+		})
+		})
+		if (selectedBUILD === "residential") {
+			var residentialApartments = document.querySelector("#Dresidential input[name=number-of-apartments]")
+			var residentialFloors = document.querySelector("#Dresidential input[name=number-of-floors]")
+			// var residentialBasements = document.querySelector("#Dresidential input[name=number-of-basements]")
+			residentialApartments.addEventListener("change", function(event){
+				// elevatorAmount = residentialApartments/residentialFloors) if residentialFloors > 20 then elevatorAmount = elevatorAmount * 2 ;
+					apartments = event.target.value
+					compute(apartments)
+			})
+			residentialFloors.addEventListener("change", function(event){
+					floors = event.target.value
+					compute(floors)
+			});
+
+		}
+		if (selectedBUILD === "commercial") {			
+			ELV.addEventListener("change", function(event){
+				elevatorAmount.textContent = event.target.value
+			})
+		}
+
+		if (selectedBUILD === "corporate") {
+			
+		}
+		if (selectedBUILD === "hybrid") {
+			console.log("HHHSelected")
+		}
+		};
+
+		function compute(value){
+			if (selectedBUILD === "residential"){
+				if (apartments <= 0 || floors <= 0){
+					return;
+				}
+				var doorsPerFloors = Math.ceil(apartments/floors)
+				var elevatorShaft = Math.ceil(doorsPerFloors/6)
+				var columns = Math.ceil(floors/20)
+				recommended = columns * elevatorShaft
+				elevatorAmount.textContent = recommended
+				elevatorCost.textContent = elevatorAmount.textContent * unitCost 
+				// console.log(elevatorAmount)
+				// console.log(unitCost)
+
+			}
+		}
+
+
+
+		_computeBooking();
 		</script>
-<!--	
-		<script>
-			var number-of-elevators = function
-			var Price = [];
-			Price[] 7565
-					12,345
-					15,400
-					10%
-					13%
-					16%
-			commercial		number-of-elevators
-residential	 if	(number-of-floors - number-of-basements) /number-of-apartments > 20 then (number-of-floors - number-of-basements) /number-of-apartments /3 = number-of-elevators
-				elese (number-of-floors) /number-of-apartments > 20 then (number-of-floors - number-of-basements) /number-of-apartments /6 = number-of-elevators
-corporate/hybrid 	(maximum-of-occupancy * (number-of-floors + number-of-basements)) / 1000 = number of elevators  required.
-												/
-					(number-of-stories + number-of-basement)/20 = number of colums required
-												= number-elevator-percolum
-												number-of-elevator = number-elevator-percolum * number of colums required.
-		installation cost = unit cost of selected * number of elevators.
-
-		
-		
-		
-		
-											</script>
-	
-	-->	
-	
-
-
 	</body>
 </html>
