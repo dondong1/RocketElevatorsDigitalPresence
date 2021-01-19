@@ -521,10 +521,23 @@
 		}
 
 		if (selectedBUILD === "corporate") {
-			
+			var totalFloors = parseInt(FLR.value)
+			var allOCC = OCC.value * totalFloors
+			var totalElV = Math.ceil(allOCC/1000)
+			var numColumns = totalELV / 20
+			var elvPerColumn = totalELV/ numColumns
+			var totalNewELV = elvPerColumn * numColumns
+			elevatorAmount.textContent = totalNewELV 
 		}
 		if (selectedBUILD === "hybrid") {
 			console.log("HHHSelected")
+			var totalFloors = parseInt(FLR.value)
+			var allOCC = OCC.value * totalFloors
+			var totalElV = Math.ceil(allOCC/1000)
+			var numColumns = totalELV / 20
+			var elvPerColumn = totalELV/ numColumns
+			var totalNewELV = elvPerColumn * numColumns
+			elevatorAmount.textContent = totalNewELV
 		}
 		};
 
