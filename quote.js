@@ -146,8 +146,8 @@
         alert("Purchase today to get 5% promotion.  Thank you");
       });
     }
-    function dosomething() {
-        alert("Please enter positive number");
+    window.onload = function() {
+        alert("Please choose your Building Types + Elevator Type, for others only enter positive number");
         return;
     }
     function calculateRecommended() {
