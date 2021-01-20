@@ -147,7 +147,7 @@
       });
     }
     window.onload = function() {
-        alert("Please choose your Building Types + Elevator Type, for others only enter positive number");
+        alert("Please choose your Building Type + Elevator Type, for others only enter positive number");
         return;
     }
     function calculateRecommended() {
