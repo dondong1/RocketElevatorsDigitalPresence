@@ -30,41 +30,16 @@
 		<link href="assets/css/pack-hotel.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/custom-forms-v2.css" rel="stylesheet" type="text/css" />
 		
-
-	
-	</head>
+	    <!-- PERSONAL CSS -->
+	    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+</head>
 
 	<body id="home" class="smoothscroll enable-animation">
 
 		<!-- wrapper -->
 		<div id="wrapper">
 
-			<!-- 
-				AVAILABLE HEADER CLASSES
 
-				Default nav height: 96px
-				.header-md 		= 70px nav height
-				.header-sm 		= 60px nav height
-
-				.b-0 		= remove bottom border (only with transparent use)
-				.transparent	= transparent header
-				.translucent	= translucent header
-				.sticky			= sticky header
-				.static			= static header
-				.dark			= dark header
-				.bottom			= header on bottom
-				
-				shadow-before-1 = shadow 1 header top
-				shadow-after-1 	= shadow 1 header bottom
-				shadow-before-2 = shadow 2 header top
-				shadow-after-2 	= shadow 2 header bottom
-				shadow-before-3 = shadow 3 header top
-				shadow-after-3 	= shadow 3 header bottom
-
-				.clearfix		= required for mobile menu, do not remove!
-
-				Example Usage:  class="clearfix sticky header-sm transparent b-0"
-			-->
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
 				<!-- TOP NAV -->
@@ -154,163 +129,118 @@
 				<form id="quoteForm" action="quote.html" method="post"></form>
 
 					<div class="heading-title heading-dotted text-center">		
-						<ul id="building-type">
-						<label class="fs-17" for="">BUILDING TYPES</label>
-						<select id = "buildingtype">
-							<option id="residential" type="residential" value="residential"> Residential </option>
-							<option id="commercial" type="commerical" value="commercial"> Commercial </option>
-							<option id="corporate" type="corporate" value="corporate"> Corporate </option>
-							<option id="hybrid" type="hybrid" value="hybrid"> Hybrid </option>
-						</select>
+						<ul class="building-option-list" id="building-type">
+						    <h4> BUILDING TYPES:</h4>
+						
+							<input id="residential" type="radio" name="building_type" value="residential" checked="checked"><i></i> <h3>Residential </h3>
+							<input id="commercial" type="radio" name="building_type" value="commercial"><i></i><h3>Commercial</h3> 
+							<input id="corporate" type="radio" name="building_type" value="corporate"><i></i><h3>Corporate</h3>  
+							<input id="hybrid" type="radio" name="building_type" value="hybrid"><i></i><h3>Hybrid</h3>  
+						
 						</ul>
 					</div>
-		
-					<div id="productLine" class="row">
-											<div  class="text-right col-sm-3"><h4>PRODUCT LINES:</h4></div>
-											
-												<div class="col-sm-3">
-													<label class="radio block">
-													<input data-price="7655" data-fee="1.10" id="standard" type="radio" name="productLine"value="standard"> 
-													<i></i> 
-													<h3> Standard </h3>
-													</label>
-												</div>
-												<div class="col-sm-3">
-													<label class="radio block">
-													<input data-price="12345" data-fee="1.13" id="premium" type="radio" name="productLine"value="premium"> 
-													<i></i> 
-													<h3>Premium </h3>
-													</label>
-												</div>
-												<div class="col-sm-3">
-													<label class="radio block">
-													<input data-price="15400" data-fee="1.16" id="excelium" type="radio"  name="productLine" value="excelium" checked="checked"> 
-													<i></i> 
-													<h3>Excelium </h3>
-													</label>
-												</div>
-														
-												<hr>					
-									<div class="container global_">
-															
-											<hr>	
-											<h2 class="fs-17">BUILDING DETAILS</h2>
-											<div id="Dresidential">
-												<div class="row">
-													<div id="number-of-apartments" class="col-sm-4">
-														<label for="number-of-apartments">Number of Apartments</label>
-														<input class="form-control pointer" type="number" name="number-of-apartments" min="0">
-													</div>
-													<div id="number-of-floors" class="col-sm-4">
-														<label for="number-of-floors">Number of floors</label>
-														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
-													</div>
-													<div id="number-of-basements" class="col-sm-4">
-														<label for="number-of-basements">Number of basements</label>
-														<input class="form-control pointer" type="number" name="number-of-basements" min="0">
-													</div>
-												</div>
-											</div>
-											<div id="Dcommercial" class="hide">
-												<div class="row">
-													<div  id="num-of-companies" class="col-sm-4">
-														<label for="num-of-companies">Number of companies</label>
-														<input class="form-control pointer" type="number" name="number-of-companies"min="0">
-													</div>
-													<div id="number-of-floors" class="col-sm-4">
-														<label for="number-of-floors">Number of floors</label>
-														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
-													</div>
-													<div id="number-of-basements" class="col-sm-4">
-														<label for="number-of-basements">Number of basements</label>
-														<input class="form-control pointer" type="number" name="number_basements" min="0">
-													</div>
-												</div>
-												<div class="row">
-													<div class="col-sm-4">
-														<label for="number-of-parking-spots">Number of parking spots</label>
-														<input class="form-control pointer" type="number" name="number-of-parking-spots"
-															id="number-of-parking-spots" min="0">
-													</div>
-													<div id="number-of-elevators" class="col-sm-4">
-														<label for="number-of-elevators">Number of elevators</label>
-														<input id="number-of-elevators_input" class="form-control pointer" type="number" name="number-of-elevators" min="0">
-													</div>
-												</div>
-											</div>
-											<div id="Dcorporate" class="hide">
-												<div class="row">
-													<div id="number-of-corporations" class="col-sm-4">
-														<label for="number-of-corporations">Number of corporations</label>
-														<input class="form-control pointer" type="number" name="number-of-corporations" min="0">
-													</div>
-													<div id="number-of-floors" class="col-sm-4">
-														<label for="number-of-floors">Number of floors</label>
-														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
-													</div>
-													<div id="number-of-basements" class="col-sm-4">
-														<label for="number-of-basements">Number of basements</label>
-														<input class="form-control pointer" type="number" name="number-of-basements" min="0">
-													</div>
-													<div id="number-of-parking-spots"class="col-sm-4" >
-														<label for="number-of-parking-spots">Number of parking spots</label>
-														<input class="form-control pointer" type="number" name="number-of-parking-spots" min="0">
-													</div>
-													<div id="maximum-occupancy" class="col-sm-4">
-														<label for="maximum-occupancy">Maximum of occupancy</label>
-														<input class="form-control pointer" type="number" name="maximum-occupancy" min="0">
-													</div>
-												</div>
-											</div>
-											<div id="Dhybrid" class="hide">
-												<div class="row">
-													<div id="number-of-floors"  class="col-sm-4">
-														<label for="number-of-floors">Number of floors</label>
-														<input class="form-control pointer" type="number" name="number-of-floors" min="0">
-													</div>
-													<div class="col-sm-4">
-														<label for="number_basements">Number of basements</label>
-														<input class="form-control pointer" type="number" name="number_basements" 
-														id="number-of-basements" min="0">
-													</div>
-													<div id="number-of-companies" class="col-sm-4">
-														<label for="number-of-companies">Number of companies</label>
-														<input class="form-control pointer" type="number" name="number-of-companies" min="0">
-													</div>	
-													<div id="number-of-parking-spots" class="col-sm-4">
-														<label for="number-of-parking-spots">Number of parking spots</label>
-														<input class="form-control pointer" type="number" name="number-of-parking-spots" min="0">
-													</div>
-													<div id="maximum-occupancy" class="col-sm-4">
-														<label for="maximum-occupancy">Maximum occupancy</label>
-														<input class="form-control pointer" type="number" name="maximum-occupancy" min="0">
-													</div>
-													<div id="business-hours" class="col-sm-4">
-														<label for="business-hours">Number of business hours</label>
-														<input class="form-control pointer" type="number" name="business-hours" max="24">
-													</div>
-												</div>
-											</div>
-											<hr>					
-											<div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL REQUIRED ELEVATORS:     <span id="elevator-amount">0</span> UNITS </span>
-											</div>
+                   
+                    <div class="heading-title heading-dotted text-center">
+                        <label class="pr-10 d-inline-block"><h4>PRODUCT LINES:</h4>&nbsp;</label>
+                        <div class="form-check-inline">
+                            <input class="" type="radio" name="cab-grade" id="standard" value="standard" data-price="7565"
+                                data-fee=".10">
+                            <label class="mt-8 ml-10" for="standard"><h3>Standard</h3></label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="" type="radio" name="cab-grade" id="premium" value="premium" data-price="12345"
+                                data-fee=".13">
+                            <label class="mt-8 ml-10" for="premium"><h3>Premium</h3></label>
+                        </div>
+                        <div class="form-check-inline">
+                            <input class="" type="radio" name="cab-grade" id="excelium" value="excelium" data-price="15400"
+                                data-fee=".16">
+                            <label class="mt-8 ml-10" for="excelium"><h3>Excelium</h3></label>
+                        </div>
+                    </div>																
+				<hr>	
+                        <div id="quote_form" class="">
+                             <div class="row d-flex align-items-end">
+            
+                             <div class="col-sm-4" id = "number-of-apartments">
+                                 <label for="num-apartments">Number of Apartments</label>
+                                                        <input class="form-control pointer" type="number" name="num-apartments" id="num-apartments"
+                                                            min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4 d-none" id="number-of-companies">
+                                                        <label for="num-companies">Number of Companies</label>
+                                                        <input class="form-control pointer" type="number" name="num-companies" id="num-companies" min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4 d-none" id="number-of-corporations">
+                                                        <label for="num-corporations">Number of Corporations</label>
+                                                        <input class="form-control pointer" type="number" name="num-corporations" id="num-corporations"
+                                                            min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4" id="number-of-floors">
+                                                        <label for="num-floors">No. of floors (excluding basements)</label>
+                                                        <input class="form-control pointer" type="number" name="num-floors" id="num-floors" min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4" id="number-of-basements">
+                                                        <label for="num-basements">Number of Basements</label>
+                                                        <input class="form-control pointer" type="number" name="num-basements" id="num-basements" min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4 d-none" id="number-of-elevators">
+                                                        <label for="num-elevators">Number of Elevators</label>
+                                                        <input class="form-control pointer" type="number" name="num-elevators" id="num-elevators" min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4 d-none" id="maximum-occupancy">
+                                                        <label for="max-occupancy">Maximum Number of Occupancy</label>
+                                                        <input class="form-control pointer" type="number" name="max-occupancy" id="max-occupancy" min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4 d-none" id="number-of-parking-spots">
+                                                        <label for="num-parking">No. of parking spaces available</label>
+                                                        <input class="form-control pointer" type="number" name="num-parking" id="num-parking" min="0">
+                                                    </div>
+            
+                                                    <div class="col-sm-4 d-none" id="business-hours">
+                                                        <label for="hours">Number of Business Hours</label>
+                                                        <input class="form-control pointer" type="number" name="hours" id="hours" min="0" max="24">
+                                                    </div>
+            
+                                                </div>
+                                            </div>
+                            
 											<hr>
-											<div  class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											EACH ELEVATOR COST: <span id="elevator-unitcost">0</span> <span class="text-muted fs-13 fw-300"></span> USD</span>
-											</div>
+                                            <div class="col-12" id="elevator-amount">
+                                                <label class="pr-10 d-inline" for="recommended">TOTAL REQUIRED ELEVATORS:&nbsp;</label>
+                                                <input readonly id="recommended" type="text" name="recommended"
+                                                    class="form-control pointer col-md-2 d-inline">
+                                            </div>
+                                            <hr>
+                                            <div class="col-sm-4" id="elevator-total-price">
+                                                <label for="subtotal-price">TOTAL EQUIPMENT COST (INSTALLATION NOT INCLUDED): $</label>
+                                                <input readonly id="subtotal-price" type="text" name="subtotal-price" class="form-control pointer"
+                                                    placeholder="">
+                                            </div>
 											<hr>
-											<div  class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL ELEVATORS COST (WITHOUT INSTALLATION): $<span id="elevator-cost">0</span> <span class="text-muted fs-13 fw-300"></span> USD</span>
-											</div>
+                                            <div class="col-sm-4" id="elevator-unit-price">
+                                                <label for="unit-price">COST PER ELEVATOR: $</label>
+                                                <input readonly id="unit-price" type="text" name="unit-price" class="form-control pointer"
+                                                    placeholder="">
+                                            </div>
 											<hr>
-											<div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL INSTALLATION FEES: $<span id="installation-fees">0</span><span class="text-muted fs-13 fw-300"></span> USD </span>
-											</div>	
+                                            <div class="col-sm-4" id="installation-fees">
+                                                <label for="fees-installation">TOTAL INSTALLATION FEES: $</label>
+                                                <input readonly id="fees-installation" type="text" name="fees-installation"
+                                                    class="form-control pointer" placeholder="">
+                                            </div>	
 											<hr>			
-											<div  class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30">
-											TOTAL COST WITH INSTALLATION: $<span id="final-price">0</span> <span class="text-muted fs-13 fw-300"></span> USD </span>
-											</div>
+                                            <div class="text-right fw-600 fs-18 booking-form-highlight bt-0 mb-30" id="final-price">
+                                                TOTAL COST WITH INSTALLATION: $ <span id="final_payment">0</span>
+                                            </div>
+                
 											<hr>
 											<h2 class="fs-17 mt-60">PERSONAL DETAIL</h2>
 											<div class="booking-form-highlight mb-30">
@@ -335,8 +265,8 @@
 											PURCHASE NOW
 											</button>					
 										
-				</div>
-			</form>			
+				    </div>
+			    </form>			
 			</section>
 			<!-- FOOTER -->
 			<footer id="footer">
@@ -431,136 +361,267 @@
 		<script src="assets/js/contact.js"></script>
 		<script src="assets/js/view/pack_hotel.js"></script>
 		
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-
-		crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script>
+            var plugin_path = 'assets/plugins/';
+        </script>
+        <script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
 		
-		<script>
-		var BUILD = document.querySelectorAll("#building-type");
-		var RES = document.getElementById("Dresidential");
-		var COM = document.getElementById("Dcommercial");
-		var CORT = document.getElementById("Dcorporate");
-		var HYB = document.getElementById("Dhybrid");
-		var selectedBUILD = "";
-		BUILD.forEach((BUILD) => {
-		  BUILD.addEventListener("click", (e) => {
-			 selectedBUILD = e.target.value;
-			_computeBooking(selectedBUILD)
-			if (selectedBUILD === "residential") {
-			  RES.classList.remove("hide");
-			  COM.classList.add("hide");
-			  CORT.classList.add("hide");
-			  HYB.classList.add("hide");
-			} else if (selectedBUILD === "commercial") {
-			  RES.classList.add("hide");
-			  COM.classList.remove("hide");
-			  CORT.classList.add("hide");
-			  HYB.classList.add("hide");
-			} else if (selectedBUILD === "corporate") {
-			  RES.classList.add("hide");
-			  COM.classList.add("hide");
-			  CORT.classList.remove("hide");
-			  HYB.classList.add("hide");
-			} else {
-			  RES.classList.add("hide");
-			  COM.classList.add("hide");
-			  CORT.classList.add("hide");
-			  HYB.classList.remove("hide");			
-			}
-		  });
-		});
-		var APT = document.getElementById("number-of-appartment_input");
-    	var FLR = document.getElementById("number-of-floors_input");
-   		var BAS = document.getElementById("number-of-basements_input");
-    	var COP = document.getElementById("number-of-companies_input");
-    	var PAR = document.getElementById("number-of-parking-spots_input");
-    	var ELV = document.getElementById("number-of-elevators_input");
-    	var COR = document.getElementById("number-of-corporations_input");
-   	    var OCC = document.getElementById("max-occupancy_input");
-    	var HRS = document.getElementById("number-of-hours_input");
-		var productLineButtons = document.querySelectorAll("input[name=productLine]")
-		var elevatorAmount = document.getElementById("elevator-amount");
-		var apartments = 0;
-		var floors = 0;
-		var basements = 0;
-		var elevators = 0;
-		var occupancy = 0;
-		var recommended = 0;
-		var unitCost = 0;
-		var elevatorUnitCost = document.getElementById("elevator-unitcost")
-		var elevatorCost = document.getElementById("elevator-cost")
-	function _computeBooking(selectedBUILD) {
-		productLineButtons.forEach(function(button){
-			button.addEventListener("click", function(event){
-			unitCost = event.target.getAttribute("data-price")	
-			elevatorUnitCost.textContent = unitCost	
-		})
-		})
-		if (selectedBUILD === "residential") {
-			var residentialApartments = document.querySelector("#Dresidential input[name=number-of-apartments]")
-			var residentialFloors = document.querySelector("#Dresidential input[name=number-of-floors]")
-			// var residentialBasements = document.querySelector("#Dresidential input[name=number-of-basements]")
-			residentialApartments.addEventListener("change", function(event){
-				// elevatorAmount = residentialApartments/residentialFloors) if residentialFloors > 20 then elevatorAmount = elevatorAmount * 2 ;
-					apartments = event.target.value
-					compute(apartments)
-			})
-			residentialFloors.addEventListener("change", function(event){
-					floors = event.target.value
-					compute(floors)
-			});
+<script>
 
-		}
-		if (selectedBUILD === "commercial") {			
-			ELV.addEventListener("change", function(event){
-				elevatorAmount.textContent = event.target.value
-			})
-		}
+// "residential" is already checked on page load
+let selectedBuildingType = "residential";
+window.onload = () => init(selectedBuildingType);
 
-		if (selectedBUILD === "corporate") {
-			var totalFloors = parseInt(FLR.value)
-			var allOCC = OCC.value * totalFloors
-			var totalElV = Math.ceil(allOCC/1000)
-			var numColumns = totalELV / 20
-			var elvPerColumn = totalELV/ numColumns
-			var totalNewELV = elvPerColumn * numColumns
-			elevatorAmount.textContent = totalNewELV 
-		}
-		if (selectedBUILD === "hybrid") {
-			console.log("HHHSelected")
-			var totalFloors = parseInt(FLR.value)
-			var allOCC = OCC.value * totalFloors
-			var totalElV = Math.ceil(allOCC/1000)
-			var numColumns = totalELV / 20
-			var elvPerColumn = totalELV/ numColumns
-			var totalNewELV = elvPerColumn * numColumns
-			elevatorAmount.textContent = totalNewELV
-		}
-		};
+// IDs according to building type
+const selectionIDs = {
+  residential: ["number-of-apartments", "number-of-floors", "number-of-basements"],
+  commercial: ["number-of-floors", "number-of-basements", "number-of-companies", "number-of-parking-spots", "number-of-elevators"],
+  corporate: ["number-of-floors", "number-of-basements", "number-of-parking-spots", "number-of-corporations", "maximum-occupancy"],
+  hybrid: ["number-of-floors", "number-of-basements", "number-of-companies", "number-of-parking-spots", "maximum-occupancy", "business-hours"]
+};
 
-		function compute(value){
-			if (selectedBUILD === "residential"){
-				if (apartments <= 0 || floors <= 0){
-					return;
-				}
-				var doorsPerFloors = Math.ceil(apartments/floors)
-				var elevatorShaft = Math.ceil(doorsPerFloors/6)
-				var columns = Math.ceil(floors/20)
-				recommended = columns * elevatorShaft
-				$("#elevator-amount").textContent(recommended);
-				$("#final-cost").textContent(elevatorAmount.textContent * unitCost)
-	
-				
+const inputs = document.querySelectorAll("input[type=number]");
+const buildingTypes = document.querySelectorAll(".building-option-list input");
+const cabGradeButtons = document.querySelectorAll("input[name=cab-grade]");
 
-			}
-		}
+const numApartmentsInput = document.getElementById("num-apartments");
+const numFloorsInput = document.getElementById("num-floors");
+const numBasementsInput = document.getElementById("num-basements");
+const numElevatorsInput = document.getElementById("num-elevators");
+const numOccupantsPerFloorInput = document.getElementById("max-occupancy");
+const recommendedElevatorsInput = document.getElementById("recommended");
+const costPerElevatorInput = document.getElementById("unit-price");
+const costBasedOnQuantityInput = document.getElementById("subtotal-price");
+const installationCostsInput = document.getElementById("fees-installation");
+
+let finalPaymentOutputSpan = document.getElementById("final_payment");
+
+const values = {
+  apartments: 0,
+  floors: 0,
+  basements: 0,
+  elevators: 0,
+  occupants: 0,
+  recommended: 0,
+  unitCost: 0,
+  installationCost: 0
+};
+
+// Add eventListener to each "building type" radio button
+buildingTypes.forEach((buildingType) => {
+  buildingType.addEventListener("click", (e) => {
+    selectedBuildingType = e.target.value;
+    switchInputs(selectedBuildingType);
+    init();
+  });
+});
+
+cabGradeButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    values.unitCost = Number(e.target.getAttribute("data-price"));
+    values.installationCost = Number(e.target.getAttribute("data-fee"));
+    costPerElevatorInput.value = formatPrice(values.unitCost);
+    printTotals();
+  })
+})
+
+//================================
+
+function switchInputs(selectedBuildingType) {
+  inputs.forEach(input => {
+    // Clear all inputs
+    input.value = "";
+    // Hide all input elements on page
+    let formField = input.parentElement;
+    formField.classList.add("d-none");
+  });
+
+  // Show only elements with IDs according to selection
+  selectionIDs[selectedBuildingType].forEach(id => {
+    for (let i = 0; i < inputs.length; i++) {
+      if (inputs[i].parentElement.id === id) {
+        inputs[i].parentElement.classList.remove("d-none");
+      }
+    }
+  });
+}
 
 
+function init() {
+  numElevatorsInput.addEventListener("change", (e) => {
+    values.elevators = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+  numElevatorsInput.addEventListener("keyup", (e) => {
+    values.elevators = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
 
-		_computeBooking();
-		</script>
-	</body>
+  numApartmentsInput.addEventListener("change", (e) => {
+    values.apartments = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+  numApartmentsInput.addEventListener("keyup", (e) => {
+    values.apartments = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+
+  numFloorsInput.addEventListener("change", (e) => {
+    values.floors = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+  numFloorsInput.addEventListener("keyup", (e) => {
+    values.floors = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+
+  numOccupantsPerFloorInput.addEventListener("change", (e) => {
+    values.occupants = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+  numOccupantsPerFloorInput.addEventListener("keyup", (e) => {
+    values.occupants = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+
+  numBasementsInput.addEventListener("change", (e) => {
+    values.basements = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+  numBasementsInput.addEventListener("keyup", (e) => {
+    values.basements = Number(e.target.value);
+    e.stopImmediatePropagation();
+    calculateRecommended();
+    printTotals();
+  });
+}
+
+function calculateRecommended() {
+  // COMMERCIAL
+  if (selectedBuildingType === "commercial") {
+    values.recommended = values.elevators;
+    recommendedElevatorsInput.value = values.recommended;
+  }
+
+  // RESIDENTIAL
+  if (selectedBuildingType === "residential") {
+    if (values.apartments <= 0 || values.floors <= 0) return;
+
+    let doorsPerFloor = Math.ceil(values.apartments / values.floors);
+    let elevatorShaftsNeeded = Math.ceil(doorsPerFloor / 6); //<== require an elevator shaft for every 6 apartments
+    let columnsRequired = Math.ceil(values.floors / 20); //<== every 20 floors requires an additional column
+    values.recommended = columnsRequired * elevatorShaftsNeeded;
+    recommendedElevatorsInput.value = values.recommended;
+  }
+
+  // CORPORATE/HYBRID
+  if (selectedBuildingType === "corporate" || selectedBuildingType === "hybrid") {
+    if (values.floors <= 0 || values.basements <= 0 || values.occupants <= 0) return;
+
+    let totalOccupants = values.occupants * (values.floors + values.basements);
+    let elevatorShaftsNeeded = Math.ceil(totalOccupants / 1000);
+    let columnsRequired = Math.ceil((values.floors + values.basements) / 20); //<== every 20 floors requires an additional column
+    let elevatorsPerColumn = Math.ceil(elevatorShaftsNeeded / columnsRequired);
+    values.recommended = columnsRequired * elevatorsPerColumn;
+    recommendedElevatorsInput.value = values.recommended;
+  }
+}
+
+function formatPrice(amount) {
+  return `$${Number(amount).toLocaleString()}`;
+}
+
+function printTotals() {
+  let costBasedOnQuantity = values.recommended * values.unitCost;
+  costBasedOnQuantityInput.value = formatPrice(costBasedOnQuantity);
+  installationCostsInput.value = formatPrice(costBasedOnQuantity * values.installationCost);
+  finalPaymentOutputSpan.textContent = formatPrice(costBasedOnQuantity + (costBasedOnQuantity * values.installationCost));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// If the type of building is COMMERCIAL, 
+// => 1. the number of elevator shafts to be deployed is specified and the estimated number of cages is equal to the number required.
+
+// If the type of building is RESIDENTIAL,
+// => 1. divide the number of apartments by the number of floors(excluding the number of basements) to obtain an average of doors per floor
+// => 2. and require an elevator shaft for every 6 apartments.
+// => 3. If the apartment has more than 20 stories, it is necessary to provide an additional column of elevators and thus double the number of elevator shafts.A new column is therefore added to each new group of 20 stories.
+
+// If the type of building is CORPORATE or HYBRID,
+// => 1. multiply the number of occupants per floor by the number of floors(including the number of basements) to obtain the total number of occupants.
+// => 2. The number of elevators required is determined by the number of occupants divided by 1000. 
+// => 3. The number of stories(including the number of basements) is divided by 20 to obtain the number of elevator columns required.
+// => 4. Then divide the number of elevators by the number of columns to get the number of elevators per column.
+// => 5. The total number of elevators is determined by the number of elevators per column multiplied by the number of columns.
+
+// A read - only field should display the recommended number of elevators based on the rules above. This field must be updated systematically when a dependent value field is changed.
+
+
+//=======================================================
+
+
+// To determine the budget, it is necessary to propose a selection among the range of elevators to determine the unit price and thus multiply it by the number of cages previously calculated to know the estimated budget of the project:
+/////// => A radio button must allow selection from three distinct product lines: Standard, Premium or Excelium
+/////// => When the line selection is made, a service is called that returns the unit price for an elevator shaft of the chosen line.
+////////////// => Standard: The service returns $7565
+////////////// => Premium: The service returns $12,345
+////////////// => Excelium: The service returns $15,400
+/////// => The installation fee varies for each product line, and a field calculates the amount equivalent to the percentage returned by a service
+////////////// => Standard: Installation fees of 10%
+////////////// => Premium: Installation fees of 13%
+////////////// => Excelium: Installation fees of 16%
+/////// => The estimated cost of installation is the unit cost of the selected range multiplied by the number of cages previously calculated. To this number must be multiplied installation costs according to the selected line.
+/////// => Whenever the line selection changes, the fields in this section must be systematically updated. Calculated fields must be read-only and can not be edited.
+
+
+//======================================================
+
+
+// In conclusion, here are the results we expect to see:
+/////// => The amount of elevators needed
+/////// => The unit price of each elevatoR
+/////// => The total price of the elevators
+/////// => The installation fees
+/////// => The final price, combining the price of the elevators and the installation fees
+
+
+
+</script>
+</body>
 </html>
