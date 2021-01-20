@@ -162,51 +162,50 @@
                         <div id="quote_form" class="">
                              <div class="row d-flex align-items-end">
             
-                             <div class="col-sm-4" id = "number-of-apartments">
-                                 <label for="num-apartments">Number of Apartments</label>
-                                                        <input class="form-control pointer" type="number" name="num-apartments" id="num-apartments"
-                                                            min="0">
+                                                    <div class="col-sm-4" id = "number-of-apartments">
+                                                     <label for="num-apartments">Number of Apartments</label>
+                                                        <input class="form-control pointer" type="number" name="num-apartments" id="num-apartments" min="0"  oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4 d-none" id="number-of-companies">
                                                         <label for="num-companies">Number of Companies</label>
-                                                        <input class="form-control pointer" type="number" name="num-companies" id="num-companies" min="0">
+                                                        <input class="form-control pointer" type="number" name="num-companies" id="num-companies" min="0"  oninput="validity.valid||(value='');" >
                                                     </div>
             
-                                                    <div class="col-sm-4 d-none" id="number-of-corporations">
+                                                    <div class="col-sm-4 d-none" id="number-of-corporations" >
                                                         <label for="num-corporations">Number of Corporations</label>
-                                                        <input class="form-control pointer" type="number" name="num-corporations" id="num-corporations"
-                                                            min="0">
+                                                        <input class="form-control pointer" type="number" name="num-corporations" id="num-corporations"   min="0"
+                                                        oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4" id="number-of-floors">
                                                         <label for="num-floors">No. of floors (excluding basements)</label>
-                                                        <input class="form-control pointer" type="number" name="num-floors" id="num-floors" min="0">
+                                                        <input class="form-control pointer" type="number" name="num-floors" id="num-floors" min="0" oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4" id="number-of-basements">
                                                         <label for="num-basements">Number of Basements</label>
-                                                        <input class="form-control pointer" type="number" name="num-basements" id="num-basements" min="0">
+                                                        <input class="form-control pointer" type="number" name="num-basements" id="num-basements" min="0" oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4 d-none" id="number-of-elevators">
                                                         <label for="num-elevators">Number of Elevators</label>
-                                                        <input class="form-control pointer" type="number" name="num-elevators" id="num-elevators" min="0">
+                                                        <input class="form-control pointer" type="number" name="num-elevators" id="num-elevators" min="0" oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4 d-none" id="maximum-occupancy">
                                                         <label for="max-occupancy">Maximum Number of Occupancy</label>
-                                                        <input class="form-control pointer" type="number" name="max-occupancy" id="max-occupancy" min="0">
+                                                        <input class="form-control pointer" type="number" name="max-occupancy" id="max-occupancy" min="0" oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4 d-none" id="number-of-parking-spots">
                                                         <label for="num-parking">No. of parking spaces available</label>
-                                                        <input class="form-control pointer" type="number" name="num-parking" id="num-parking" min="0">
+                                                        <input class="form-control pointer" type="number" name="num-parking" id="num-parking" min="0" oninput="validity.valid||(value='');">
                                                     </div>
             
                                                     <div class="col-sm-4 d-none" id="business-hours">
                                                         <label for="hours">Number of Business Hours</label>
-                                                        <input class="form-control pointer" type="number" name="hours" id="hours" min="0" max="24">
+                                                        <input class="form-control pointer" type="number" name="hours" id="hours" min="0" max="24" oninput="validity.valid||(value='');" >
                                                     </div>
             
                                                 </div>
@@ -453,7 +452,7 @@ function switchInputs(selectedBuildingType) {
 function init() {
   numElevatorsInput.addEventListener("change", (e) => {
     values.elevators = Number(e.target.value);
-    e.stopImmediatePropagation();
+     e.stopImmediatePropagation();
     calculateRecommended();
     printTotals();
   });
@@ -514,9 +513,13 @@ function init() {
     e.stopImmediatePropagation();
     calculateRecommended();
     printTotals();
+    alert("Purchase today to get 5% promotion.  Thank you");
   });
 }
-
+function dosomething() {
+    alert("Please enter positive number");
+    return;
+}
 function calculateRecommended() {
   // COMMERCIAL
   if (selectedBuildingType === "commercial") {
@@ -534,7 +537,7 @@ function calculateRecommended() {
     values.recommended = columnsRequired * elevatorShaftsNeeded;
     recommendedElevatorsInput.value = values.recommended;
   }
-
+  
   // CORPORATE/HYBRID
   if (selectedBuildingType === "corporate" || selectedBuildingType === "hybrid") {
     if (values.floors <= 0 || values.basements <= 0 || values.occupants <= 0) return;
@@ -558,67 +561,6 @@ function printTotals() {
   installationCostsInput.value = formatPrice(costBasedOnQuantity * values.installationCost);
   finalPaymentOutputSpan.textContent = formatPrice(costBasedOnQuantity + (costBasedOnQuantity * values.installationCost));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// If the type of building is COMMERCIAL, 
-// => 1. the number of elevator shafts to be deployed is specified and the estimated number of cages is equal to the number required.
-
-// If the type of building is RESIDENTIAL,
-// => 1. divide the number of apartments by the number of floors(excluding the number of basements) to obtain an average of doors per floor
-// => 2. and require an elevator shaft for every 6 apartments.
-// => 3. If the apartment has more than 20 stories, it is necessary to provide an additional column of elevators and thus double the number of elevator shafts.A new column is therefore added to each new group of 20 stories.
-
-// If the type of building is CORPORATE or HYBRID,
-// => 1. multiply the number of occupants per floor by the number of floors(including the number of basements) to obtain the total number of occupants.
-// => 2. The number of elevators required is determined by the number of occupants divided by 1000. 
-// => 3. The number of stories(including the number of basements) is divided by 20 to obtain the number of elevator columns required.
-// => 4. Then divide the number of elevators by the number of columns to get the number of elevators per column.
-// => 5. The total number of elevators is determined by the number of elevators per column multiplied by the number of columns.
-
-// A read - only field should display the recommended number of elevators based on the rules above. This field must be updated systematically when a dependent value field is changed.
-
-
-//=======================================================
-
-
-// To determine the budget, it is necessary to propose a selection among the range of elevators to determine the unit price and thus multiply it by the number of cages previously calculated to know the estimated budget of the project:
-/////// => A radio button must allow selection from three distinct product lines: Standard, Premium or Excelium
-/////// => When the line selection is made, a service is called that returns the unit price for an elevator shaft of the chosen line.
-////////////// => Standard: The service returns $7565
-////////////// => Premium: The service returns $12,345
-////////////// => Excelium: The service returns $15,400
-/////// => The installation fee varies for each product line, and a field calculates the amount equivalent to the percentage returned by a service
-////////////// => Standard: Installation fees of 10%
-////////////// => Premium: Installation fees of 13%
-////////////// => Excelium: Installation fees of 16%
-/////// => The estimated cost of installation is the unit cost of the selected range multiplied by the number of cages previously calculated. To this number must be multiplied installation costs according to the selected line.
-/////// => Whenever the line selection changes, the fields in this section must be systematically updated. Calculated fields must be read-only and can not be edited.
-
-
-//======================================================
-
-
-// In conclusion, here are the results we expect to see:
-/////// => The amount of elevators needed
-/////// => The unit price of each elevatoR
-/////// => The total price of the elevators
-/////// => The installation fees
-/////// => The final price, combining the price of the elevators and the installation fees
 
 
 
