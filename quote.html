@@ -27,19 +27,62 @@
 
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/pack-hotel.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/custom-forms-v2.css" rel="stylesheet" type="text/css" />
 		
-	    <!-- PERSONAL CSS -->
-	    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-</head>
+	</head>
 
+	<!--
+		AVAILABLE BODY CLASSES:
+		
+		smoothscroll 			= create a browser smooth scroll
+		enable-animation		= enable WOW animations
+
+		bg-grey					= grey background
+		grain-grey				= grey grain background
+		grain-blue				= blue grain background
+		grain-green				= green grain background
+		grain-blue				= blue grain background
+		grain-orange			= orange grain background
+		grain-yellow			= yellow grain background
+		
+		boxed 					= boxed layout
+		pattern1 ... patern11	= pattern background
+		menu-vertical-hide		= hidden, open on click
+		
+		BACKGROUND IMAGE [together with .boxed class]
+		data-background="assets/images/rocket/boxed_background/1.jpg"
+	-->
 	<body id="home" class="smoothscroll enable-animation">
 
+	
 		<!-- wrapper -->
 		<div id="wrapper">
 
+			<!-- 
+				AVAILABLE HEADER CLASSES
 
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+
+				.b-0 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+
+				.clearfix		= required for mobile menu, do not remove!
+
+				Example Usage:  class="clearfix sticky header-sm transparent b-0"
+			-->
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
 				<!-- TOP NAV -->
@@ -52,7 +95,7 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="index.html">
+						<a class="logo float-left scrollTo" href="index.html#top">
 							<img src="assets/images/rocket/R2.png" alt="" />
 						</a>
 
@@ -82,8 +125,8 @@
 											SERVICES
 										</a>
 									</li>
-									<li><!-- WORK -->
-										<a id="porfolio" href="index.html#porfolio">
+									<li><!-- PORFORLIO -->
+										<a id="portfolio-nav" href="index.html#porfolio">
 											PORFOLIO
 										</a>
 									</li>
@@ -111,6 +154,8 @@
 
 					</div>
 				</header>
+				<!-- /Top Nav -->
+
 				<!-- /Top Nav -->
 
 				</div>
@@ -219,19 +264,19 @@
                                             </div>
                                             <hr>
                                             <div class="col-sm-4" id="elevator-total-price">
-                                                <label for="subtotal-price">TOTAL EQUIPMENT COST (INSTALLATION NOT INCLUDED): $</label>
+                                                <label for="subtotal-price">TOTAL EQUIPMENT COST (INSTALLATION NOT INCLUDED):</label>
                                                 <input readonly id="subtotal-price" type="text" name="subtotal-price" class="form-control pointer"
-                                                    placeholder="">
+                                                    placeholder=""> 
                                             </div>
 											<hr>
                                             <div class="col-sm-4" id="elevator-unit-price">
-                                                <label for="unit-price">COST PER ELEVATOR: $</label>
+                                                <label for="unit-price">COST PER ELEVATOR:</label>
                                                 <input readonly id="unit-price" type="text" name="unit-price" class="form-control pointer"
                                                     placeholder="">
                                             </div>
 											<hr>
                                             <div class="col-sm-4" id="installation-fees">
-                                                <label for="fees-installation">TOTAL INSTALLATION FEES: $</label>
+                                                <label for="fees-installation">TOTAL INSTALLATION FEES:</label>
                                                 <input readonly id="fees-installation" type="text" name="fees-installation"
                                                     class="form-control pointer" placeholder="">
                                             </div>	

@@ -143,13 +143,13 @@
         e.stopImmediatePropagation();
         calculateRecommended();
         printTotals();
-        alert("Purchase today to get 5% promotion.  Thank you");
       });
     }
-    window.onload = function() {
-        alert("Please choose your Building Type + Elevator Type, for others only enter positive number");
-        return;
-    }
+    
+    //window.onload = function() {
+    // alert("Please choose your Building Type + Elevator Type, for others only enter positive number");
+    // return;
+    //  }
     function calculateRecommended() {
       // COMMERCIAL
       if (selectedBuildingType === "commercial") {
