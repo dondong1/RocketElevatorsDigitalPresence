@@ -21,6 +21,8 @@
     const numBasementsInput = document.getElementById("num-basements");
     const numElevatorsInput = document.getElementById("num-elevators");
     const numOccupantsPerFloorInput = document.getElementById("max-occupancy");
+
+    
     const recommendedElevatorsInput = document.getElementById("recommended");
     const costPerElevatorInput = document.getElementById("unit-price");
     const costBasedOnQuantityInput = document.getElementById("subtotal-price");
